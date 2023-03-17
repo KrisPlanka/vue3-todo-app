@@ -9,8 +9,7 @@ export default {
     StatusFilter,
     TodoItem,
     Message,
-},
-
+  },
   data() {
     return {
       todos: [],
@@ -19,7 +18,6 @@ export default {
       errorMessage: '',
     };
   },
-
   computed: {
     activeTodos() {
       return this.todos.filter(todo => !todo.completed);
@@ -41,15 +39,6 @@ export default {
       }
     }
   },
-
-  // watch: {
-  //   todos: {
-  //     deep: true,
-  //     handler() {
-  //       localStorage.setItem('todos', JSON.stringify(this.todos));
-  //     },
-  //   }
-  // },
   mounted() {
     todosApi.getTodos()
     .then(({ data }) => this.todos = data)
